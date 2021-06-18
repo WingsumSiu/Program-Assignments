@@ -12,3 +12,5 @@ def primeFinder(max):
                 break
             else:
                 print(i)
+
+print(primeFinder(100))
