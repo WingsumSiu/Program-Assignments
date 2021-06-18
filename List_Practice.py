@@ -1,4 +1,4 @@
-empty_list = []
+# empty_list = []
 
 # Cities
 cities_list = ["Oakland", "Atlanta", "New York City", "Seattle", "Memphis", "Miami", "Boston", "Los Angeles", "Denver", "New Orleans"]
