@@ -59,14 +59,28 @@ print(jordan13_stock, yeezy_stock, foamposite_stock, airmax_stock, sbdunk_stock)
 # add 3 key: value pairs
 #food_prices = {"Cereal": 3.25, "Gum": 1.50, "Carrot": 0.75}
 food_prices["Cereal"] = 3.25
+food_prices["Gum"] = 1.50
+food_prices["Carrot"] = 0.75
+print(food_prices)
+
 #fruit_color = {"Plum": "Purple", "Kiwi": "Green", "Strawberry": "Red"}
+fruit_color["Plum"] = "Purple"
+fruit_color["Kiwi"] = "Green"
+fruit_color["Strawberry"] = "Red"
+print(fruit_color)
 
 # I don't know basketball players...or shoes... :'(
 #NBA_players = {"Bob": 2, "Sue": 7, "Albert": 21}
 NBA_players["Bob"] = 2
+NBA_players["Sue"] = 7
+NBA_players["Albert"] = 21
+print(NBA_players)
 
 # delete items
-#del NBA_players["Kevin Durant"]
+del food_prices["Cheese"]
+del food_prices["Milk"]
+print(food_prices)
+del NBA_players["Kevin Durant"]
 del NBA_players["Bob"]
 print(NBA_players)
 
