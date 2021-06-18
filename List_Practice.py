@@ -42,6 +42,6 @@ print(cities_list)
 fruit_list = ["Apple", "Banana", "Orange", "Pear", "Tomato", "Plum", "Kiwi", "Strawberry", "Blueberry", "Raspberry"]
 print(fruit_list)
 
-# list slicing -> 4 fruits
+# list slicing -> four fruits
 four_fruits = fruit_list[4:8]
 print(four_fruits)
