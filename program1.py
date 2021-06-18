@@ -1,5 +1,6 @@
 print("hello world")
 
+# LeBron James
 name = "Lebron"
 # name is a string
 age = 35
@@ -13,6 +14,7 @@ jersey_number = "23"
 print(name, age, salary, plays_basketball, jersey_number)
 print(type(name), type(age), type(salary), type(plays_basketball), type(jersey_number))
 
+# Car
 car_name = "Toyota"
 x = 50
 my_first_name = "Wing Sum"
@@ -21,6 +23,7 @@ print(car_name, type(car_name))
 print(x, type(x))
 print(my_first_name, type(my_first_name))
 
+# Boolean, if statement
 bool = True
 pool = False
 
