@@ -13,4 +13,16 @@ def primeFinder(max):
             else:
                 print(i)
 
-print(primeFinder(100))
+# print(primeFinder(100))
+
+def triangleArea(base, height):
+    area = base*height/2
+    return area
+
+areaList = [0]*5
+
+for b in range(0,5):
+    areaList[b] = triangleArea(b, 6)
+
+print(areaList)
+
