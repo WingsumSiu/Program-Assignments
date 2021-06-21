@@ -1,4 +1,4 @@
-food_prices = {"Chicken": 1.59, "Beef": 1.99, "Cheese":1.00, "Milk": 2.50}
+food_prices = {"Chicken": 1.59, "Beef": 1.99, "Cheese": 1.00, "Milk": 2.50}
 
 # food price dictionary
 chicken_price = food_prices["Chicken"]
@@ -80,8 +80,154 @@ print(NBA_players)
 del food_prices["Cheese"]
 del food_prices["Milk"]
 print(food_prices)
-del NBA_players["Kevin Durant"]
+# del NBA_players["Kevin Durant"]
 del NBA_players["Bob"]
 print(NBA_players)
 
 
+# Lab 4 - functions
+# Step II 
+def total_price(item1, item2):
+    if item1 not in food_prices:
+        return item1 + " doesn't exist in the list"
+    elif item2 not in food_prices:
+        return item2 + " doesn't exist in the list"
+    else: 
+        price1 = food_prices[item1]
+        price2 = food_prices[item2]
+        total_price = price1 + price2
+        return "The total price of the " + item1 + " and the " + item2 + " is " + str(total_price)
+
+def total_price2(item1, item2):
+    if item1 not in food_prices:
+        return item1 + " doesn't exist in the list"
+    elif item2 not in food_prices:
+        return item2 + " doesn't exist in the list"
+    else: 
+        price1 = food_prices[item1]
+        price2 = food_prices[item2]
+        total_price = price1 + price2
+        return "The total price of the " + item1 + " and the " + item2 + " is " + str(total_price)
+print(total_price("Chicken", "Beef"))
+
+# Step III
+def price_difference(item1, item2):
+    if item1 not in food_prices:
+        return item1 + " doesn't exist in the list"
+    elif item2 not in food_prices:
+        return item2 + " doesn't exist in the list"
+    else: 
+        price1 = food_prices[item1]
+        price2 = food_prices[item2]
+        price_difference = price1 - price2
+        return("The price difference between the " + item1 + " and the " + item2 + " is " + str(abs(round(price_difference, 2))))
+
+print(price_difference("Beef", "Chicken"))
+
+# combined function
+def price_total_and_difference(item1, item2):
+    if item1 not in food_prices:
+        return item1 + " doesn't exist in the list"
+    elif item2 not in food_prices:
+        return item2 + " doesn't exist in the list"
+    else: 
+        price1 = food_prices[item1]
+        price2 = food_prices[item2]
+        total_price = price1 + price2
+        price_difference = price1 - price2
+        return "The total price of the " + item1 + " and the " + item2 + " is " + str(total_price) + "\nThe price difference between the " + item1 + " and the " + item2 + " is " + str(abs(round(price_difference, 2)))
+        
+print(price_total_and_difference("Chicken", "Beef"))
+
+# Step IV 
+def restock(item, multiplier):
+    if item not in shoe_stock:
+        if item == "All":
+            shoe_stock["Jordan 13"] = shoe_stock["Jordan 13"] * multiplier
+            shoe_stock["Yeezy"] = shoe_stock["Yeezy"] * multiplier
+            shoe_stock["Foamposite"] = shoe_stock["Foamposite"] * multiplier
+            shoe_stock["Air Max"] = shoe_stock["Air Max"] * multiplier
+            shoe_stock["SB Dunk"] = shoe_stock["SB Dunk"] * multiplier
+            return shoe_stock
+        else:    
+            return item + " doesn't exist in the list"
+    else: 
+        shoeinitial = shoe_stock[item]
+        shoefinal = shoeinitial * multiplier        
+        shoe_stock[item] = shoefinal
+        return shoe_stock
+
+print(restock("All", 4))
+print(restock("Foamposite", 10))
+
+# Step V
+def clearance_sale(item, divisor):
+    if item not in shoe_stock:
+        if item == "All":
+            shoe_stock["Jordan 13"] = shoe_stock["Jordan 13"] / divisor
+            shoe_stock["Yeezy"] = shoe_stock["Yeezy"] / divisor
+            shoe_stock["Foamposite"] = shoe_stock["Foamposite"] / divisor
+            shoe_stock["Air Max"] = shoe_stock["Air Max"] / divisor
+            shoe_stock["SB Dunk"] = shoe_stock["SB Dunk"] / divisor
+            return shoe_stock
+        else:    
+            return item + " doesn't exist in the list"
+    else: 
+        shoeinitial = shoe_stock[item]
+        shoefinal = shoeinitial / divisor
+        shoe_stock[item] = shoefinal
+        return shoe_stock
+
+print(clearance_sale("All", 4))
+print(clearance_sale("Foamposite", 10))
+
+# combined function (if no restock or final, the parameter would be 1)
+def shoe_restock_clearance(item, multiplier, divisor):
+    if item not in shoe_stock:
+        if item == "All":
+            shoe_stock["Jordan 13"] = shoe_stock["Jordan 13"] * multiplier / divisor
+            shoe_stock["Yeezy"] = shoe_stock["Yeezy"] * multiplier / divisor
+            shoe_stock["Foamposite"] = shoe_stock["Foamposite"] * multiplier / divisor
+            shoe_stock["Air Max"] = shoe_stock["Air Max"] * multiplier / divisor
+            shoe_stock["SB Dunk"] = shoe_stock["SB Dunk"] * multiplier / divisor
+            return shoe_stock
+        else:    
+            return item + " doesn't exist in the list"
+    else: 
+        shoeinitial = shoe_stock[item]
+        shoefinal = shoeinitial * multiplier / divisor
+        shoe_stock[item] = shoefinal
+        return shoe_stock
+
+print(shoe_restock_clearance("All", 8, 4))
+print(shoe_restock_clearance("Foamposite", 10, 5))
+
+# Step VI 
+def jersey_num_comparison_parity(player1, player2):
+    jersey_num1 = NBA_players[player1]
+    jersey_num2 = NBA_players[player2]
+    comparison = ""
+    jersey1_parity = ""
+    jersey2_parity = ""
+
+    if jersey_num1 > jersey_num2:
+        comparison = str(player1) + "'s jersey number is greater than " + str(player2) + "'s jersey number."
+    elif jersey_num1 < jersey_num2:
+        comparison = str(player1) + "'s jersey number is smaller than " + str(player2) + "'s jersey number."
+    else:
+        comparison = str(player1) + "and " + str(player2) + "'s jersey number are the same."
+
+    if jersey_num1 % 2 == 0:
+        jersey1_parity = " " + str(player1) + "'s jersey number is an even number."
+    else:
+        jersey1_parity = " " + str(player1) + "'s jersey number is an odd number."
+
+    if jersey_num2 % 2 == 0:
+        jersey2_parity = " " + str(player2) + "'s jersey number is an even number."
+    else:
+        jersey2_parity = " " + str(player2) + "'s jersey number is an odd number."
+
+    return comparison + jersey1_parity + jersey2_parity
+
+print(jersey_num_comparison_parity("Stephen Curry", "Damian Lillard"))
+print(jersey_num_comparison_parity("Lebron James", "Kevin Durant"))
